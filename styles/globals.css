@@ -1,26 +1,46 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  scroll-behavior: smooth;
+  font-family: "Raleway", sans-serif;
+  background-color: #fdfdfd;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@media (max-width: 400px) {
+  .shrink{
+    flex-direction: column;
   }
-  body {
-    color: white;
-    background: black;
-  }
+}
+
+.custom-img {
+  background-image: url("../public/assets/images/Gebäude_Front.jpg");
+  height: 90vh;
+}
+
+.custom-height {
+  height: 90vh;
+}
+
+.custom-hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  margin: 10px;
+  background-color: #f97316;
+  transition: transform 300ms ease-in-out;
+  transform: scaleX(0);
+}
+
+.custom-hover:hover::before,
+.custom-hover:focus::before {
+  transform: scaleX(1);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #f97316 !important;
 }
