@@ -37,6 +37,9 @@ const QUERY = gql`
         avatar{
           url
         }
+      },
+      categories{
+        name
       }
       coverPhoto{
         url
@@ -65,7 +68,7 @@ export default function Home({posts}) {
       <ShowcaseSection/>
       
       {/* //Blog Section */}
-      <div id="aktuelles" className='flex flex-col justify-center items-center m-10'>
+      <div id="aktuelles" className='flex flex-col justify-center items-center m-10 -mt-24'>
         <div className='flex flex-row items-center justify-center'>
           <h3 className='text-3xl font-bold'>Aktuelles</h3>
           <h2 className='mx-4 text-2xl'>|</h2>
@@ -82,7 +85,7 @@ export default function Home({posts}) {
             autoplay={{delay: 2000}}>
 
             {posts.map((post, index) => (
-              <SwiperSlide>
+              <SwiperSlide key={index}>
                 <Post key={index} {...post}/>
               </SwiperSlide>
             ))}
@@ -96,12 +99,10 @@ export async function getStaticProps() {
   //Get posts from graphcms
   const {posts} = await graphcms.request(QUERY)
 
-  console.log(posts) 
 
   return {
     props: {
       posts,
-      // frontmatter
     },
     revalidate: 10,
   }

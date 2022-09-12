@@ -1,9 +1,12 @@
+import Image from "next/image";
 import Link from "next/link"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Post = ({datePublished, coverPhoto, author, slug, content, title}) => {
+const Post = ({datePublished, coverPhoto, author, slug, content, title, categories}) => {
 
   // const parser = new DOMParser();
+
+  const [category, setCategory] = useState("");
 
   const truncate = (str, n = 150, useWordBoundary) => {
 
@@ -20,12 +23,21 @@ const Post = ({datePublished, coverPhoto, author, slug, content, title}) => {
       : subString) + '\u2026';
   };
 
+  
+  useEffect(() => {
+    categories.forEach((category) => {setCategory( (value) =>
+      `${value !== "" ? `${value} &` : ""} ${category.name}`
+    )})
+  },[])
+
   return (
     <div className="hover:scale-105 ease-in duration-200 flex flex-col bg-white p-[15px] rounded-md shadow-lg h-[375px] max-w-[400px] mb-0 md:mb-20">
-      <img className="rounded-md max-w-[350px]m max-h-[250px]" src={coverPhoto.url} />
+      <div>
+        <Image layout="responsive" height={250} width={350} className="rounded-md" objectFit="contain" src={coverPhoto.url} />
+      </div>
       <div className="flex flex-row justify-between text-xs font-light p-2">
           <p className="text-[#f97316]">{datePublished}</p>
-          <p>Von {author.name}</p>
+          <p>Von {author.name} in {category}</p>
       </div>
 
       <div className="flex flex-1 flex-col p-2">
@@ -36,7 +48,7 @@ const Post = ({datePublished, coverPhoto, author, slug, content, title}) => {
       </div>
       <div className="self-end">
         <Link className="" href={`/blog/${slug}`}>
-          <a className="ease-in duration-150 self-end mt-5 bg-transparent hover:text-[#f97316] hover:border-[#f97316] p-1 border text-slate-800">Lesen</a>
+          <a className="ease-in p-2 duration-150 self-end mt-5 bg-transparent hover:text-[#f97316] hover:border-[#f97316] border text-slate-800">Mehr...</a>
         </Link>
       </div>
     </div>

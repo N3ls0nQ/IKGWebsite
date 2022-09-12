@@ -17,6 +17,9 @@ const QUERY = gql`
                 url,
             }
         },
+        categories{
+          name
+        },
         content {
             html,
         },
@@ -70,11 +73,12 @@ export default function PostPage({post}){
               <h1 className="font-bold text-3xl">{post.title}</h1>
             </div>
               <div className="flex m-3">
-                <h1 className="font-medium text-xl">Von {post.author.name}</h1>
+                <h1 className="font-medium text-xl">Von {post.author.name} aus {post.categories.name}</h1>
                 <h1 className="text-xl mx-3">|</h1>
                 <h1 className="font-medium text-xl">{post.datePublished}</h1>
               </div>
-            <img src={post.coverPhoto.url} className="max-w-6xl mb-16"/>
+              {/* TODO: Scale image on native devices */}
+            <img src={post.coverPhoto.url} className="max-w-6xl mb-16 bg-cover"/>
             <div className="text-2xl px-10" dangerouslySetInnerHTML={{__html: post.content.html}}></div>
           </div>
         </main>

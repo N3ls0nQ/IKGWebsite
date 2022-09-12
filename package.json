@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanem/react-nprogress": "^5.0.13",
     "graphql": "^16.6.0",
     "graphql-request": "^5.0.0",
     "gray-matter": "^4.0.3",
@@ -20,7 +21,8 @@
     "react-icons": "^4.4.0",
     "react-parallax": "^3.5.1",
     "smooth-scrollbar": "^8.7.5",
-    "swiper": "^8.3.2"
+    "swiper": "^8.3.2",
+    "zustand": "^4.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
