@@ -1,1 +1,1 @@
-This is a website for my school [Immanuel-Kant-Gymnasium](ikg-website.vercel.app)
+This is a website for my school [Immanuel-Kant-Gymnasium](https://ikg-website.vercel.app)
