@@ -33,7 +33,7 @@ const Post = ({datePublished, coverPhoto, author, slug, content, title, categori
   return (
     <div className="hover:scale-105 ease-in duration-200 flex flex-col bg-white p-[15px] rounded-md shadow-lg h-[375px] max-w-[400px] mb-0 md:mb-20">
       <div>
-        <Image layout="responsive" height={250} width={350} className="rounded-md" objectFit="contain" src={coverPhoto.url} />
+        <Image alt="cover_photo" layout="responsive" height={250} width={350} className="rounded-md" objectFit="contain" src={coverPhoto.url} />
       </div>
       <div className="flex flex-row justify-between text-xs font-light p-2">
           <p className="text-[#f97316]">{datePublished}</p>

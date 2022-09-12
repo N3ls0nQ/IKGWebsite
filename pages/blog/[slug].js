@@ -1,4 +1,5 @@
 import {GraphQLClient, gql} from "graphql-request" 
+import Image from "next/image";
 import { IoLogoChrome } from "react-icons/io";
 import Post from '../../components/Post'
 
@@ -78,7 +79,7 @@ export default function PostPage({post}){
                 <h1 className="font-medium text-xl">{post.datePublished}</h1>
               </div>
               {/* TODO: Scale image on native devices */}
-            <img src={post.coverPhoto.url} className="max-w-6xl mb-16 bg-cover"/>
+            <Image priority layout="responsive" alt="post_cover_photo" src={post.coverPhoto.url} width={1152} height={500} objectFit="contain" className="max-w-6xl mb-16 bg-cover"/>
             <div className="text-2xl px-10" dangerouslySetInnerHTML={{__html: post.content.html}}></div>
           </div>
         </main>
