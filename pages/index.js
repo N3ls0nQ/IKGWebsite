@@ -65,7 +65,7 @@ export default function Home({posts}) {
       <Hero heading="Immanuel-Kant-Gymnasium" message="Herzlich Willkommen am"/>
 
       {/* //Showcase Section */}
-      <ShowcaseSection id="aktuelles" />
+      <ShowcaseSection/>
       
       {/* //Blog Section */}
       <div className='flex flex-col justify-center items-center m-10 -mt-24'>
