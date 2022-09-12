@@ -18,9 +18,10 @@ const ShowcaseSection = () => {
 
             <div className='bg-white ease-in duration-200 rounded-sm p-2 flex flex-row justify-center items-center m-3 sm:hover:shadow-lg sm:hover:bg-slate-50 hover:cursor-pointer'>
                 <IoRestaurantSharp size={`65`} className='mr-5'/>
-                <div>
+                {/* //Id wir hier gesetzt, damit der Header nicht von der Navbar verdeckt wird */}
+                <div >
                   <h1 className='font-semibold text-lg'>Die Mensa</h1>
-                  <p>Alle Informationen rund um die KANTine</p>
+                  <p id="aktuelles">Alle Informationen rund um die KANTine</p>
                 </div>
             </div>
         </div>

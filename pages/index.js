@@ -65,10 +65,10 @@ export default function Home({posts}) {
       <Hero heading="Immanuel-Kant-Gymnasium" message="Herzlich Willkommen am"/>
 
       {/* //Showcase Section */}
-      <ShowcaseSection/>
+      <ShowcaseSection id="aktuelles" />
       
       {/* //Blog Section */}
-      <div id="aktuelles" className='flex flex-col justify-center items-center m-10 -mt-24'>
+      <div className='flex flex-col justify-center items-center m-10 -mt-24'>
         <div className='flex flex-row items-center justify-center'>
           <h3 className='text-3xl font-bold'>Aktuelles</h3>
           <h2 className='mx-4 text-2xl'>|</h2>
